@@ -1,12 +1,15 @@
 <?php
 
-use App\Model\GetUser;
+use App\GetUser;
+use App\Db\Database;
 
 
 require './vendor/autoload.php';
+Database::init();
 
-GetUser::getusers();
 
+//GetUser::getusers();
+GetUser::createUser();
 // use Illuminate\Events\Dispatcher;
 // use Illuminate\Container\Container;
 // use Illuminate\Database\Capsule\Manager as Capsule;

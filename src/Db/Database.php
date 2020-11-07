@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace App\Db;
 
 
 //require './vendor/autoload.php';
@@ -12,9 +12,10 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 
 
-class Database{
+class Database implements DataBaseInterface{
 
-   static function init(){
+
+  static function init(){
     $capsule = new Capsule();
 
     $capsule->addConnection([
@@ -33,6 +34,6 @@ class Database{
     $capsule->setEventDispatcher(new Dispatcher(new Container));
     $capsule->setAsGlobal();
     $capsule->bootEloquent();
-   }
+  }
 
 }
